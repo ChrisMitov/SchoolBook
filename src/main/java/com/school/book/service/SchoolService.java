@@ -25,7 +25,8 @@ public class SchoolService {
   @Qualifier( "customJson" )
   private ObjectMapper     customJson;
 
-  public School addSchool( School school ) {
+  public School addSchool( SchoolDto schoolDto ) {
+    final School school = customJson.convertValue( schoolDto, School.class );
     return schoolRepository.save( school );
   }
 

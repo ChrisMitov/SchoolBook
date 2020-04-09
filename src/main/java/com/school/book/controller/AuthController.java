@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.school.book.configuration.JwtToken;
+import com.school.book.exception.CustomException;
 import com.school.book.model.JwtRequest;
 import com.school.book.model.JwtResponse;
 import com.school.book.service.JwtUserDetailsService;
@@ -52,11 +53,11 @@ public class AuthController {
 
     } catch( DisabledException e ) {
 
-      throw new Exception( "USER_DISABLED", e );
+      throw new CustomException( "USER_DISABLED", e.getMessage() );
 
     } catch( BadCredentialsException e ) {
 
-      throw new Exception( "INVALID_CREDENTIALS", e );
+      throw new CustomException( "Invalid credentials", e.getMessage() );
 
     }
 

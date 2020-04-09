@@ -20,5 +20,6 @@ public class UserDto extends BaseDto {
   private String    password;
   private SchoolDto school;
   private String    subject;
+  private String    role;
   private Set<User> children;
 }

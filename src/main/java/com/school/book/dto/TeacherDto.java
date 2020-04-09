@@ -9,11 +9,11 @@ import lombok.EqualsAndHashCode;
 @Data
 public class TeacherDto extends BaseDto {
   @NotBlank( message = "Name is mandatory" )
-  private String name;
+  private String    name;
   @NotBlank( message = "Username is mandatory" )
-  private String username;
+  private String    username;
   @NotBlank( message = "Password is mandatory" )
-  private String password;
-  private  SchoolDto school;
-  private String subject;
+  private String    password;
+  private SchoolDto school;
+  private String    subject;
 }

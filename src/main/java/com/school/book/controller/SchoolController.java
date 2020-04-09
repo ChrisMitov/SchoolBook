@@ -3,6 +3,8 @@ package com.school.book.controller;
 import java.util.List;
 import java.util.Set;
 
+import javax.validation.Valid;
+
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -32,7 +34,7 @@ public class SchoolController {
   }
 
   @PostMapping
-  public School createSchool( @RequestBody School school ) {
+  public School createSchool( @Valid @RequestBody SchoolDto school ) {
     return schoolService.addSchool( school );
   }
 
